@@ -1,0 +1,18 @@
+
+.looknlike_logo {
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+.header_base {
+    text-align: center; 
+    margin: 2rem 0;
+}
+
+.footer_base {
+    text-align: center; 
+    margin-top: 2rem;
+}
+
+.footer_menu_items {
+    font-size: .6rem;
+}

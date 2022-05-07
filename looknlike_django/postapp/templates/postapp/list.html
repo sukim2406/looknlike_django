@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+ 
+{% block content %}
+    <div class="container">
+        <div>
+            <img src="https://picsum.photos/200/300" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/200" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/350" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/400" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/120" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/320" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/240" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/290" alt="">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/280" alt="">
+        </div>
+    </div>
+    
+    <style>
+        .container div {
+            width: 280px;
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1rem;
+        }
+
+        .container img {
+            width: 100%;
+            border-radius: 1rem;
+        }
+    </style>
+
+    <script src="{% static 'js/magic_grid.js' %}"></script>
+  
+{% endblock%}

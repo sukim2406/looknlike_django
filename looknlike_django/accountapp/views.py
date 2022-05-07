@@ -7,8 +7,8 @@ from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 from django.contrib.auth.forms import UserCreationForm
 
-from .decorators import account_ownership_required
-from .forms import AccountUpdateForm
+from accountapp.decorators import account_ownership_required
+from accountapp.forms import AccountUpdateForm
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 # Create your views here.

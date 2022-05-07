@@ -7,10 +7,16 @@
         <span>nav item 2</span>
         <span>nav item 3</span>
         {% if not user.is_authenticated %}
+        <a href="{% url 'accountapp:create' %}">
+            <span>signup</span>
+        </a>
         <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
             <span>login</span>
         </a>
         {% else %}
+        <a href="{% url 'accountapp:detail' pk=user.pk %}">
+            <span>account</span>
+        </a>
         <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
             <span>logout</span>
         </a>

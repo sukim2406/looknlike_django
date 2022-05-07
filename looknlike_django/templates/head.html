@@ -14,4 +14,24 @@
 
     <!-- Default css link -->
     <link rel="stylesheet" href="{% static 'base.css' %}" type="text/css">
+
+    <style>
+        @font-face {
+            font-family: 'NanumPenScript-Regular';
+            src: local('NanumPenScript-Regular'),
+            url("{% static 'fonts/NanumPenScript-Regular.ttf' %}") format("opentype"); 
+        }
+
+        @font-face {
+            font-family: 'NanumGothicCoding-Regular';
+            src: local('NanumGothicCoding-Regular'),
+            url("{% static 'fonts/NanumGothicCoding-Regular.ttf' %}") format("opentype");
+        }
+
+        @font-face {
+            font-family: 'NanumGothicCoding-Bold';
+            src: local('NanumGothicCoding-Bold'),
+            url("{% static 'fonts/NanumGothicCoding-Bold.ttf' %}") format("opentype");
+        }
+    </style>
 </head>

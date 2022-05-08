@@ -35,7 +35,7 @@
 
                 {% for post in post_list %}
                     <a href="{% url 'postapp:detail' pk=post.pk %}">
-                        {% include '/Users/ssk/codes/looknlike_django/looknlike_django/postapp/templates/postapp/snippets/card.html' with post=post %}
+                        {% include 'postapp/snippets/card.html' with post=post %}
                     </a>
                 {% endfor %}
             </div>
@@ -44,7 +44,8 @@
                 <h1> No Posts Yet</h1>
             </div>
         {% endif %}
-        {% include '/Users/ssk/codes/looknlike_django/looknlike_django/postapp/templates/postapp/snippets/pagination.html' with page_obj=page_obj %}
+        {% include 'postapp/snippets/pagination.html' with page_obj=page_obj %}
+        <!-- {% include '/Users/ssk/codes/looknlike_django/looknlike_django/postapp/templates/postapp/snippets/pagination.html' with page_obj=page_obj %} -->
     </div>
         
     

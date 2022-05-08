@@ -3,25 +3,30 @@
 
 {% block content %}
     <div>
-        <div style="text-align: center; max-width: 500px; margin: 4rem auto;"">
+        <div style="text-align: center; max-width: 700px; margin: 4rem auto;"">
             <h1>
                 {{ target_post.title }}
             </h1>
-            <img src="{{ target_post.image.url }}" alt="">
+            <h5>
+                {{ target_post.creator.profile.nickname }}
+            </h5>
+            <hr>
+            <img src="{{ target_post.image.url }}" alt="" style="width: 100%; border-radius: 1rem; margin: 2rem 0;">
+            <hr>
             <p>
                 {{ target_post.content }}
             </p>
             <p>
                 {{ target_post.created_at }}
             </p>
-
+            <hr>
             {% if target_post.creator == user %}
-            <a href="{% url 'postapp:update' pk=target_post.pk %}">
-                <p>update post</p>
-            </a>
-            <a href="{% url 'postapp:delete' pk=target_post.pk %}">
-                <p>delete post</p>
-            </a>
+                <a href="{% url 'postapp:update' pk=target_post.pk %}" class="btn btn-primary rounded-pill col-3">
+                    Modify
+                </a>
+                <a href="{% url 'postapp:delete' pk=target_post.pk %}" class="btn btn-danger rounded-pill col-3">
+                    Delete
+                </a>
             {% endif %}
         </div>
     </div>

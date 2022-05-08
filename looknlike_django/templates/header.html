@@ -3,7 +3,9 @@
         <h1 class="looknlike_logo">Look & Like</h1>
     </div>
     <div>
-        <span>nav item 1</span>
+        <a href="{% url 'postapp:list' %}">
+            <span>newsfeed</span>
+        </a>
         <span>nav item 2</span>
         <span>nav item 3</span>
         {% if not user.is_authenticated %}
@@ -14,6 +16,9 @@
             <span>login</span>
         </a>
         {% else %}
+        <a href="{% url 'postapp:create' %}">
+            Upload Post
+        </a>
         <a href="{% url 'accountapp:detail' pk=user.pk %}">
             <span>account</span>
         </a>

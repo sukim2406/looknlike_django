@@ -12,7 +12,7 @@
                     </a>
                 </p>
             {% endif %}
-            <img src="{{ target_user.profile.image.url }}" alt="" style="height: 10rem; width: 10rem; border-radius: 10rem; margin-bottom: 2rem;">
+            <img src="{{ target_user.profile.image.url }}" alt="" style="height: 10rem; width: 10rem; border-radius: 10rem; margin-bottom: 2rem; object-fit: cover;">
             <h2 style="font-family: NanumGothicCoding-Bold;">
                 {{ target_user.profile.nickname }}
             </h2>
@@ -48,6 +48,9 @@
             </a>
         {% endif %}
     </div> 
+    <div>
+        {% include 'snippets/list.html' with post_list=object_list %}
+    </div>
 </div>
 
 {% endblock %}

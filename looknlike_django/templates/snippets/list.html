@@ -1,0 +1,47 @@
+{% load static %}
+
+<div>
+    {% if post_list %}
+        <div class="container">
+
+            {% for post in post_list %}
+                <a href="{% url 'postapp:detail' pk=post.pk %}">
+                    {% include 'snippets/post_card.html' with post=post %}
+                </a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="text-center">
+            <h1> No Posts Yet</h1>
+        </div>
+    {% endif %}
+    {% include 'snippets/pagination.html' with page_obj=page_obj %}
+    <!-- {% include '/Users/ssk/codes/looknlike_django/looknlike_django/postapp/templates/postapp/snippets/pagination.html' with page_obj=page_obj %} -->
+</div>
+    
+
+<style>
+    .container {
+        padding: 0;
+        margin: 0, auto;
+    }
+
+    .container a {
+        width: 45%;
+        max-width: 250px;
+    }
+
+    .container div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1rem;
+    }
+
+    .container img {
+        width: 100%;
+        border-radius: 1rem;
+    }
+</style>
+
+<script src="{% static 'js/magic_grid.js' %}"></script>

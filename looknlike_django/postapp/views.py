@@ -6,6 +6,8 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse, reverse_lazy
 from postapp.decorators import post_ownership_required
+from django.views.generic.edit import FormMixin
+from commentapp.forms import CommentCreationForm
 # Create your views here.
 
 
@@ -27,8 +29,9 @@ class PostCreateView(CreateView):
         return reverse('postapp:detail', kwargs={'pk': self.object.pk})
 
 
-class PostDetailView(DetailView):
+class PostDetailView(DetailView, FormMixin):
     model = Post
+    form_class = CommentCreationForm
     template_name = 'postapp/detail.html'
     context_object_name = 'target_post'
 
@@ -58,4 +61,4 @@ class PostListView(ListView):
     model = Post
     context_object_name = 'post_list'
     template_name = 'postapp/list.html'
-    paginate_by= 5
+    paginate_by= 10

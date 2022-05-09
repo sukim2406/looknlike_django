@@ -11,6 +11,8 @@ from accountapp.decorators import account_ownership_required
 from accountapp.forms import AccountUpdateForm
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.views.generic.list import MultipleObjectMixin
+from postapp.models import Post
 # Create your views here.
 
 has_onwership = [account_ownership_required, login_required]
@@ -39,10 +41,15 @@ class AccountCreateView(CreateView):
     template_name = 'accountapp/create.html'
 
 
-class AccountDetailView(DetailView):
+class AccountDetailView(DetailView, MultipleObjectMixin):
     model = User
     template_name = 'accountapp/detail.html'
     context_object_name = 'target_user'
+    paginate_by = 25
+
+    def get_context_data(self, **kwargs):
+        object_list = Post.objects.filter(creator=self.get_object())
+        return super(AccountDetailView, self).get_context_data(object_list=object_list, **kwargs)
 
 
 @method_decorator(has_onwership, 'get')

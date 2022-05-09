@@ -5,7 +5,7 @@ from postapp.models import Post
 class PostCreationForm(ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'image', 'content']
+        fields = ['title', 'image', 'content', 'project']
 
 class PostUpdateForm(PostCreationForm):
     def __init__(self, *args, **kwargs):

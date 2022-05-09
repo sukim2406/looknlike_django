@@ -16,3 +16,26 @@
 .footer_menu_items {
     font-size: .9rem;
 }
+
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+}
+
+.header_nav_item {
+    margin: 0.5rem;
+}
+
+.header_nav_bar {
+    margin: 1rem 0;
+}

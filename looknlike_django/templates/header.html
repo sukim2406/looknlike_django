@@ -18,7 +18,10 @@
         </a>
         {% else %}
         <a href="{% url 'postapp:create' %}" class="header_nav_item">
-            Upload Post
+            upload
+        </a>
+        <a href="{% url 'subscriptionapp:list' %}" class="header_nav_item">
+            subscriptions
         </a>
         <a href="{% url 'accountapp:detail' pk=user.pk %}" class="header_nav_item">
             <span>account</span>

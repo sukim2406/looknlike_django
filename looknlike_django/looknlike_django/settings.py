@@ -14,6 +14,7 @@ from pathlib import Path
 from django.urls import reverse_lazy
 import environ
 import os
+from django.contrib.messages import constants as messages
 
 env = environ.Env(
     # set casting, default value
@@ -94,6 +95,7 @@ INSTALLED_APPS = [
     'commentapp',
     'projectapp',
     'subscriptionapp',
+    'likeapp',
 ]
 
 MIDDLEWARE = [
@@ -185,10 +187,14 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = reverse_lazy('accountapp:hello_world')
+LOGIN_REDIRECT_URL = reverse_lazy('home')
 LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
 
 
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}

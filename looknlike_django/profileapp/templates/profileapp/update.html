@@ -13,6 +13,20 @@
             {% csrf_token %}
             {% bootstrap_form form %}
             <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3">
+            <div class="mt-4">
+                <a href="{% url 'accountapp:update' pk=user.pk %}">
+                    <p>
+                        Update Password
+                    </p>
+                </a>
+            </div>
+            <div class="mt-4">
+                <a href="{% url 'accountapp:delete' pk=user.pk %}">
+                    <p style="color: red">
+                        Delete Account
+                    </p>
+                </a>
+            </div>
         </form>
     </div>
 

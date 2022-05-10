@@ -11,3 +11,4 @@ class Post(models.Model):
     image = models.ImageField(upload_to='posts/', null=False)
     created_at = models.DateField(auto_now_add=True)
     project = models.ForeignKey(Project, on_delete=models.SET_NULL, related_name='post', null=True)
+    like = models.IntegerField(default=0)

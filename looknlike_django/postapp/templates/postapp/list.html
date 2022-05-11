@@ -5,34 +5,6 @@
     <div>
         {% if post_list %}
             <div class="container">
-                <!-- <div>
-                    <img src="https://picsum.photos/200/300" alt="">
-                </div>
-                <div>
-                    <img src="https://picsum.photos/200/200" alt="">
-                </div>
-                <div>
-                    <img src="https://picsum.photos/200/350" alt="">
-                </div>
-                <div>
-                    <img src="https://picsum.photos/200/400" alt="">
-                </div>
-                <div>
-                    <img src="https://picsum.photos/200/120" alt="">
-                </div>
-                <div>
-                    <img src="https://picsum.photos/200/320" alt="">
-                </div>
-                <div>
-                    <img src="https://picsum.photos/200/240" alt="">
-                </div>
-                <div>
-                    <img src="https://picsum.photos/200/290" alt="">
-                </div>
-                <div>
-                    <img src="https://picsum.photos/200/280" alt="">
-                </div> -->
-
                 {% for post in post_list %}
                     <a href="{% url 'postapp:detail' pk=post.pk %}">
                         {% include 'snippets/post_card.html' with post=post %}
@@ -45,7 +17,6 @@
             </div>
         {% endif %}
         {% include 'snippets/pagination.html' with page_obj=page_obj %}
-        <!-- {% include '/Users/ssk/codes/looknlike_django/looknlike_django/postapp/templates/postapp/snippets/pagination.html' with page_obj=page_obj %} -->
     </div>
         
     

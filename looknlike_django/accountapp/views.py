@@ -19,8 +19,10 @@ has_onwership = [account_ownership_required, login_required]
 class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
-    success_url = reverse_lazy('accountapp:detail')
     template_name = 'accountapp/create.html'
+    
+    def get_success_url(self):
+        return reverse('accountapp:detail', kwargs={'pk': self.object.user.pk})
 
 
 class AccountDetailView(DetailView, MultipleObjectMixin):

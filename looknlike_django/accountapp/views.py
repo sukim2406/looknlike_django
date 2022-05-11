@@ -20,9 +20,7 @@ class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
     template_name = 'accountapp/create.html'
-    
-    def get_success_url(self):
-        return reverse('accountapp:detail', kwargs={'pk': self.object.user.pk})
+    success_url = reverse_lazy('accountapp:login')
 
 
 class AccountDetailView(DetailView, MultipleObjectMixin):
@@ -41,7 +39,7 @@ class AccountDetailView(DetailView, MultipleObjectMixin):
 class AccountUpdateView(UpdateView):
     model = User
     form_class = AccountUpdateForm
-    success_url = reverse_lazy('accountapp:detail')
+    success_url = reverse_lazy('accountapp:login')
     template_name = 'accountapp/update.html'
     context_object_name = 'target_user'
 
